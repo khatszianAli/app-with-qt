@@ -1,0 +1,48 @@
+{
+    "version": 3,
+    "vendor": {
+        "conan": {}
+    },
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 15,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "conan-release",
+            "displayName": "'conan-release' config",
+            "description": "'conan-release' configure using 'Unix Makefiles' generator",
+            "generator": "Unix Makefiles",
+            "cacheVariables": {
+                "CMAKE_POLICY_DEFAULT_CMP0091": "NEW",
+                "CMAKE_BUILD_TYPE": "Release"
+            },
+            "environment": {
+                "QT_PLUGIN_PATH": "/Users/newowner/.conan2/p/b/qtcb18790a86699/p/plugins",
+                "QT_HOST_PATH": "/Users/newowner/.conan2/p/b/qtcb18790a86699/p"
+            },
+            "toolchainFile": "generators/conan_toolchain.cmake",
+            "binaryDir": "/Users/newowner/CLionProjects/practise_1/build/Release"
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "conan-release",
+            "configurePreset": "conan-release",
+            "jobs": 8
+        }
+    ],
+    "testPresets": [
+        {
+            "name": "conan-release",
+            "configurePreset": "conan-release",
+            "environment": {
+                "QT_PLUGIN_PATH": "/Users/newowner/.conan2/p/b/qtcb18790a86699/p/plugins",
+                "PATH": "/Users/newowner/.conan2/p/b/qtcb18790a86699/p/bin:$penv{PATH}",
+                "LD_LIBRARY_PATH": "/Users/newowner/.conan2/p/b/qtcb18790a86699/p/lib:/Users/newowner/.conan2/p/b/qtcb18790a86699/p/plugins/imageformats:/Users/newowner/.conan2/p/b/qtcb18790a86699/p/plugins/platforms:$penv{LD_LIBRARY_PATH}",
+                "DYLD_LIBRARY_PATH": "/Users/newowner/.conan2/p/b/qtcb18790a86699/p/lib:/Users/newowner/.conan2/p/b/qtcb18790a86699/p/plugins/imageformats:/Users/newowner/.conan2/p/b/qtcb18790a86699/p/plugins/platforms:$penv{DYLD_LIBRARY_PATH}"
+            }
+        }
+    ]
+}
